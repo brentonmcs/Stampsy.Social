@@ -35,6 +35,7 @@ namespace Stampsy.Social
         public string Location { get; set; }
         public string ImageUrl { get; set; }
         public Gender? Gender { get; set; }
+        public DateTime? Birthday {get;set;}
 
         public override string ToString ()
         {

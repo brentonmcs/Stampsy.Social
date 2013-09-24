@@ -42,7 +42,7 @@ namespace Stampsy.Social.Services
                 () => this.GetProfile (token),
                 options,
                 token,
-                new [] { "email" }
+                new [] { "email" , "user_birthday"}
             );
         }
 
@@ -421,7 +421,8 @@ namespace Stampsy.Social.Services
                 Email = user.Value<string> ("email"),
                 Location = user.Value<string> ("location", "name"),
                 ImageUrl = string.Format ("http://graph.facebook.com/{0}/picture", user.Value<string> ("id")),
-                Gender = ParseGender (user.Value<string> ("gender"), "female", "male")
+                Gender = ParseGender (user.Value<string> ("gender"), "female", "male"),
+                Birthday = user.Value<DateTime?>("birthday")
             };
         }
     }
